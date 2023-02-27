@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root{
+      height: 50px;
+      width: 100px;
+      background-color: rgb(158, 135, 135);
+      position: relative;
+      transition: all ease 1s;
+      transform-origin : top left;
+    }
+  </style>
+</head>
+<body>
+  <div id = "root"></div>
+  <script>
+    let rootElement = document.getElementById("root")
+    let weeks = ["Monday Today", "Wednesday Dayoff","Friday Hangout", "Saturday meat", "Sunday sleep"];
+    let weekColor = ["red", "yellow","blue", "skyblue", "darkgray"];
+    let counter = 0;
+    let txtcolor = 0;
+    rootElement.addEventListener("click",()=>{
+      rootElement.textContent = weeks[counter];
+      rootElement.style.backgroundColor = weekColor[counter];
+      rootElement.style.top = counter * 100 + "px"
+      rootElement.style.scale = 1 + counter
+      counter ++;
+      // counter %= 3;
+      if(counter>=weeks.length){
+        counter = 0;
+      }
+      // setInterval(()=>{
+      //   if(txtcolor === 0){
+      //   rootElement.style.color = "blue";
+      //   }
+      //   else{
+      //     rootElement.style.color = "red";
+      //      txtcolor = -1;
+      //   }
+      //   txtcolor ++;
+
+      // },900);
+      console.log(counter)
+    });
+
+
+  </script>
+</body>
+</html>
